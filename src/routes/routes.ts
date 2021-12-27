@@ -1,5 +1,18 @@
+import { conectionDatabase } from '../database/db'
 import { router } from './index'
 
-class routesList {
-    
+export class routesList {
+    private getUserbyEmail() {
+        router.get('/login', (req: any, res: any) => {
+            const email = req.body.email
+            const password = req.body.password
+
+            new conectionDatabase().querySelectByEmailAndPassword(email, password, req, res)
+            
+        })
+    }
+
+    init() {
+        this.getUserbyEmail()
+    }
 }
