@@ -3,7 +3,7 @@ import { router } from './index'
 
 export class routesList {
     private getUserbyEmail() {
-        router.get('/login', (req: any, res: any) => {
+        router.post('/login', (req: any, res: any) => {
             const email = req.body.email
             const password = req.body.password
 
