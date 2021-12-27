@@ -3,7 +3,7 @@ import * as cors from "cors";
 import * as logger from "morgan";
 import * as rateLimit from "express-rate-limit";
 import { router } from "./routes/index";
-
+import * as bodyparser from 'body-parser'
 /* --------------------------------------------------------------------------------
     CRIANDO O APP
 */
@@ -41,6 +41,7 @@ app.use(express.json());
 
 app.use(logger("dev"));
 
+app.use(bodyparser.json())
 /* ---------------------------------------------------------------------------------------------
     INTEGRANDO O ENDPOINT NA APLICAÇÃO
 */
